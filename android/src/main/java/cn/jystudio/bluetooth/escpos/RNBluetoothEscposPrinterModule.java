@@ -295,7 +295,7 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
 
         /** loops the rows and print **/
         for(int i=0;i<rowsToPrint.length;i++){
-            rowsToPrint[i].append("\n\r");//wrap line..
+            rowsToPrint[i].append("\n");//wrap line..
             try {
 //                byte[] toPrint = rowsToPrint[i].toString().getBytes("UTF-8");
 //                String text = new String(toPrint, Charset.forName(encoding));
@@ -346,7 +346,7 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
             sendDataByte(Command.LF);
             sendDataByte(data);
             sendDataByte(PrinterCommand.POS_Set_PrtAndFeedPaper(30));
-            sendDataByte(PrinterCommand.POS_Set_Cut(1));
+            // sendDataByte(PrinterCommand.POS_Set_Cut(1));
             sendDataByte(PrinterCommand.POS_Set_PrtInit());
         }
     }
